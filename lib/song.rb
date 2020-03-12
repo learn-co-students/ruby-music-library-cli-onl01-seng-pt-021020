@@ -52,21 +52,17 @@ class Song
   # instance methods
   def initialize(name, artist=nil, genre=nil)
     @name = name
-    unless artist.nil?
-      self.artist = artist
-    end
-    unless genre.nil?
-      self.genre = genre
-    end
+    self.artist = artist unless artist.nil?
+    self.genre = genre unless genre.nil?
   end
   
   def save
-    @@all << self
+    @@all << self unless @@all.include?(self)
   end
   
   def artist=(artist)
-    @artist = artist
-    artist.add_song(self)
+    @artist = artist if @artist.nil?
+    artist.add_song(self) unless artist.songs.include?(self)
   end
   
   def genre=(genre)
