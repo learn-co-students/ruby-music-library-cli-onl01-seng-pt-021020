@@ -23,15 +23,24 @@ class Artist
 
   def self.create(artists)
     artists = self.new(artists)
-    self.all << artists
+    artists.save
     artists
   end
 
   def add_song(song)
-    unless song.artist = self
-      songs << song
-    else
-      song.artist
+    if song.artist == nil
+      song.artist = self
     end
+    if !@songs.include?(song)
+      self.songs << song
+    end
+  end
+
+  def genres(song)
+    newarr = []
+    songs.each do |song|
+      newarr << song.genre
+    end
+    newarr.uniq
   end
 end
