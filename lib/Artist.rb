@@ -33,4 +33,8 @@ class Artist
         song.artist == nil ? song.artist = self : nil
         @songs.include?(song) ? nil : @songs << song
     end
+
+    def genres
+        songs.collect {|song| song.genre}.uniq
+    end
 end
