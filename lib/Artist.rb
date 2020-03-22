@@ -29,4 +29,8 @@ class Artist
         created_artist
     end
     
+    def add_song(song)
+        song.artist == nil ? song.artist = self : nil
+        @songs.include?(song) ? nil : @songs << song
+    end
 end
