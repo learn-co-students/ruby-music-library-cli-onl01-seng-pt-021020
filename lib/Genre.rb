@@ -3,7 +3,8 @@ require 'pry'
 class Genre
 
     attr_accessor :name 
-
+    extend Concerns::Findable
+    
     @@all = []
 
     def initialize(name)
@@ -37,6 +38,6 @@ class Genre
        songs.collect {|song| song.artist}.uniq 
     end
 
-    
+
 
 end
