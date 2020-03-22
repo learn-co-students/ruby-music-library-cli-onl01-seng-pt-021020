@@ -24,4 +24,10 @@ class Song
     self 
     save 
   end 
+  
+  def self.create(song)
+  song = Song.new(song)
+  self.all << self
+  song 
+  end 
 end 

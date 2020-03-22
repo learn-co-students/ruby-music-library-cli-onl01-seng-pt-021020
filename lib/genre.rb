@@ -21,4 +21,9 @@ class Genre
     @@all.clear
   end 
   
+  def self.create(song)
+  genre = Genre.new(song)
+  self.all << self
+  genre 
+  end 
 end 
