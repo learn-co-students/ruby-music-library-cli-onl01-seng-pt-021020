@@ -19,4 +19,10 @@ class Artist
   def self.destroy_all
     @@all.clear
   end 
+  
+  def self.create
+  artist = Artist.new
+  self.all << self
+  artist 
+  end 
 end 

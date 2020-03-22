@@ -19,4 +19,9 @@ class Song
   def self.destroy_all
     @@all.clear
   end 
+  
+  def self.create 
+    self 
+    save 
+  end 
 end 
