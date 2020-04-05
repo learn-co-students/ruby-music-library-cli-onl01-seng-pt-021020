@@ -40,4 +40,12 @@ class Song
   def find_or_create
 
   end
+
+  def artist=(artist)
+    @artist = artist
+    artist.add_song(self)
+  end
+
+
+
 end
