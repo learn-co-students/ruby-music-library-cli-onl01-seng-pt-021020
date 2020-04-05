@@ -38,6 +38,8 @@ class Artist
     else
       nil
     end
+    if song != song.all
+      @@all << self
   end
 
 end
