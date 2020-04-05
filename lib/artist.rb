@@ -32,12 +32,12 @@ class Artist
     @songs
   end
 
-  def add_song
-    if song.artist = nil
-    song.artist = self
-  else
-    nil 
-
+  def add_song(song)
+    if song.artist == nil
+      song.artist = self
+    else
+      nil
+    end
   end
 
 end
