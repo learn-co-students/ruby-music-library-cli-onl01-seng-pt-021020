@@ -1,6 +1,7 @@
 class MusicImporter
 
-  def initialize
+  def initialize(path)
+    @path = path
   end
 
 
