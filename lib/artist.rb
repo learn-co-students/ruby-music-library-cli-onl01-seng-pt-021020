@@ -2,8 +2,7 @@ class Artist
   extend Concerns::Findable
   @@all = []
 
-  attr_accessor :name
-  attr_reader :songs
+  attr_accessor :name, :song, :musiclibrarycontroller, :musicimporter
 
   def initialize(name)
     @name = name
@@ -47,8 +46,16 @@ class Artist
   end
 
   def genres
-    songs.collect {|song| song.genre}.uniq
-  end
+    @new_array = []
+   @songs.each do |song|
+     if @new_array.include?(song.genre)
+       nil
+     else
+       @new_array << song.genre
+     end
+   end
+   @new_array
+ end
 
 
 

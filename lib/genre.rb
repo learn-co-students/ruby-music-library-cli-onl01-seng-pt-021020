@@ -3,12 +3,12 @@ class Genre
 
   @@all = []
 
-  attr_accessor :name, :songs
+  attr_accessor :name, :songs, :musiclibrarycontroller, :musicimporter
 
   def initialize(name)
     @name = name
     @songs = []
-    @@all << self
+    save
   end
 
   def self.all
@@ -24,9 +24,9 @@ class Genre
   end
 
   def self.create(song)
-  genre = Genre.new(song)
-  self.all << self
-  genre
+    genre = Genre.new(song)
+    self.all << self
+    genre
   end
 
   def artists
